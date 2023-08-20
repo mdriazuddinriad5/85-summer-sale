@@ -6,12 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>85 Summer Sale</title>
 
+    <link rel="shortcut icon" href="./images/Summer 1.png" type="image/x-icon">
+
+    <!-- font setup -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .font-sans {
+            font-family: 'Work Sans', sans-serif;
+        }
+    </style>
+
+    <!-- daisy ui setup -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- custom style -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'btn-bg': '#E527B2',
+                        'banner-bg': '#F9F6E2',
+                        'text-color-1': '#111',
+                    }
+                }
+            }
+        }
+    </script>
+
 
 </head>
 
 <body>
+    <header>
+        <!-- banner-section  -->
+        <section class="bg-banner-bg flex flex-col lg:flex-row justify-center items-center mx-auto py-8 lg:py-20">
+            <div class="text-center flex flex-col justify-center lg:pl-10">
+                <h3 class="text-xl md:text-3xl text-text-color font-sans font-medium mb-4 md:mb-6 lg:mb-11">---SALE FEVER---</h3>
+                <h2 class="text-2xl md:text-6xl font-sans font-bold text-text-color-1 mb-3 md:mb-8 lg:mb-16">Purchase TK 200 or <br> above & get <span class="text-btn-bg">20% off</span></h2>
+                <div class="flex justify-center gap-4 items-center">
+                    <p class="text-text-color-1 font-sans font-medium text-lg md:text-2xl ">Use Promo Code</p>
+                    <button class="btn py-4 px-6 bg-btn-bg text-white">SELL200</button>
+                </div>
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="./images/Summer 1.png" class="w-9/12" alt="">
+            </div>
+        </section>
+    </header>
 
 </body>
 
