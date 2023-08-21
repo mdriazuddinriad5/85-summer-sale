@@ -4,32 +4,107 @@ document.getElementById('prod1').addEventListener('click', function () {
 
     const priceDecimal = getItemPriceById('price1');
     addToEntry('K. Accessories');
+    addPriceToEntry(priceDecimal);
+    addDiscountToEntry(priceDecimal);
 
-
-    
-
-
-
-    const totalPriceField = document.getElementById('tp');
-    totalPriceField.innerHTML = `${priceDecimal} Tk`
-
-    const purchaseBtn = document.getElementById('purchaseBtn');
-    purchaseBtn.removeAttribute('disabled');
 
 })
 
 document.getElementById('prod2').addEventListener('click', function () {
     const priceDecimal = getItemPriceById('price2');
     addToEntry('K. Accessories');
-    
+    addPriceToEntry(priceDecimal);
+    addDiscountToEntry(priceDecimal);
+
+})
+document.getElementById('prod3').addEventListener('click', function () {
+
+    const priceDecimal = getItemPriceById('price3');
+    addToEntry('Home Cooker');
+    addPriceToEntry(priceDecimal);
+    addDiscountToEntry(priceDecimal);
+
+
+})
+
+document.getElementById('prod4').addEventListener('click', function () {
+    const priceDecimal = getItemPriceById('price4');
+    addToEntry('Sports Back Cap');
+    addPriceToEntry(priceDecimal);
+    addDiscountToEntry(priceDecimal);
+
+})
+document.getElementById('prod5').addEventListener('click', function () {
+
+    const priceDecimal = getItemPriceById('price5');
+    addToEntry('K. Accessories');
+    addPriceToEntry(priceDecimal);
+    addDiscountToEntry(priceDecimal);
+
+
+})
+
+document.getElementById('prod6').addEventListener('click', function () {
+    const priceDecimal = getItemPriceById('price6');
+    addToEntry('K. Accessories');
+    addPriceToEntry(priceDecimal);
+    addDiscountToEntry(priceDecimal);
+
+})
+document.getElementById('prod7').addEventListener('click', function () {
+
+    const priceDecimal = getItemPriceById('price7');
+    addToEntry('Home Cooker');
+    addPriceToEntry(priceDecimal);
+    addDiscountToEntry(priceDecimal);
+
+
+})
+
+document.getElementById('prod8').addEventListener('click', function () {
+    const priceDecimal = getItemPriceById('price8');
+    addToEntry('Sports Back Cap');
+    addPriceToEntry(priceDecimal);
+    addDiscountToEntry(priceDecimal);
+
+})
+document.getElementById('prod9').addEventListener('click', function () {
+    const priceDecimal = getItemPriceById('price9');
+    addToEntry('Sports Back Cap');
+    addPriceToEntry(priceDecimal);
+    addDiscountToEntry(priceDecimal);
+
+})
 
 
 
-    const totalPriceField = document.getElementById('tp');
-    totalPriceField.innerHTML = `${priceDecimal} Tk`
+const applyBtn = document.getElementById('applyBtn');
 
-    const purchaseBtn = document.getElementById('purchaseBtn');
-    purchaseBtn.removeAttribute('disabled');
+applyBtn.addEventListener('click', function () {
+    const couponField = document.getElementById('couponField');
+    const couponText = couponField.value;
+    if (couponText == 'SELL200') {
+        const totalField= document.getElementById('tp');
+        const totalText= totalField.innerText;
+        const total= parseFloat(totalText);
+        const discount = total * .2;
+        const discountDec= discount.toFixed(2);
+
+
+        const discountPriceField = document.getElementById('dp');
+        discountPriceField.innerHTML = `${discountDec} Tk`;
+
+
+        const discountedPrice = document.getElementById('tdp');
+        const updatedPrice= total-discount;
+        const updatedPriceDec= updatedPrice.toFixed(2);
+        discountedPrice.innerHTML = `${updatedPriceDec} Tk`;
+        couponField.value='';
+    } else {
+        alert('Please Enter SELL200 coupon to get discount');
+        couponField.value='';
+        return
+    }
 
 })
 
@@ -44,7 +119,7 @@ function getItemPriceById(itemId) {
     return totalPrice.toFixed(2);
 }
 
-/* Set items and price */
+/* Set product name to Entry */
 
 function addToEntry(productName) {
     const itemsEntry = document.getElementById('itemList');
@@ -59,3 +134,26 @@ function addToEntry(productName) {
 
 }
 
+/* Set product price to entry */
+
+function addPriceToEntry(totalPrice) {
+    const totalPriceField = document.getElementById('tp');
+    totalPriceField.innerHTML = `${totalPrice} Tk`
+    const purchaseBtn = document.getElementById('purchaseBtn');
+    purchaseBtn.removeAttribute('disabled');
+}
+
+/* Enable Apply Button*/
+
+function addDiscountToEntry(totalPrice) {
+    const discountedPrice = document.getElementById('tdp');
+    discountedPrice.innerHTML = `${totalPrice} Tk`;
+    if (totalPrice >= 200) {
+        applyBtn.removeAttribute('disabled');
+
+    } else {
+        const discountPriceField = document.getElementById('dp');
+        discountPriceField.innerHTML = `${0} Tk`;
+
+    }
+}
