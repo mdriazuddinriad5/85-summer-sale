@@ -37,7 +37,7 @@ document.getElementById('prod4').addEventListener('click', function () {
 document.getElementById('prod5').addEventListener('click', function () {
 
     const priceDecimal = getItemPriceById('price5');
-    addToEntry('K. Accessories');
+    addToEntry('Full Jersey Set');
     addPriceToEntry(priceDecimal);
     addDiscountToEntry(priceDecimal);
 
@@ -46,7 +46,7 @@ document.getElementById('prod5').addEventListener('click', function () {
 
 document.getElementById('prod6').addEventListener('click', function () {
     const priceDecimal = getItemPriceById('price6');
-    addToEntry('K. Accessories');
+    addToEntry('Sports cates');
     addPriceToEntry(priceDecimal);
     addDiscountToEntry(priceDecimal);
 
@@ -54,7 +54,7 @@ document.getElementById('prod6').addEventListener('click', function () {
 document.getElementById('prod7').addEventListener('click', function () {
 
     const priceDecimal = getItemPriceById('price7');
-    addToEntry('Home Cooker');
+    addToEntry('Single Relax Chair');
     addPriceToEntry(priceDecimal);
     addDiscountToEntry(priceDecimal);
 
@@ -63,19 +63,21 @@ document.getElementById('prod7').addEventListener('click', function () {
 
 document.getElementById('prod8').addEventListener('click', function () {
     const priceDecimal = getItemPriceById('price8');
-    addToEntry('Sports Back Cap');
+    addToEntry('Children play');
     addPriceToEntry(priceDecimal);
     addDiscountToEntry(priceDecimal);
 
 })
 document.getElementById('prod9').addEventListener('click', function () {
     const priceDecimal = getItemPriceById('price9');
-    addToEntry('Sports Back Cap');
+    addToEntry('Flexible Sofa');
     addPriceToEntry(priceDecimal);
     addDiscountToEntry(priceDecimal);
 
 })
 
+
+/* Apply button listener */
 
 
 const applyBtn = document.getElementById('applyBtn');
@@ -156,4 +158,54 @@ function addDiscountToEntry(totalPrice) {
         discountPriceField.innerHTML = `${0} Tk`;
 
     }
+}
+
+/* Modal class functions */
+
+function resetData() {
+
+    totalPrice=0;
+ 
+    const itemsEntry = document.getElementById('itemList');
+    const totalPriceField = document.getElementById('tp');
+    const discountPriceField = document.getElementById('dp');
+    const discountedPrice = document.getElementById('tdp');
+    const couponField = document.getElementById('couponField');
+    const purchaseBtn = document.getElementById('purchaseBtn');
+    const applyBtn = document.getElementById('applyBtn');
+
+
+
+    itemsEntry.innerHTML = '';
+    totalPriceField.innerHTML = '';
+    discountPriceField.innerHTML = '';
+    discountedPrice.innerHTML = '';
+    couponField.value = '';
+    purchaseBtn.disabled = true;
+    applyBtn.disabled = true;
+
+    
+
+    const hr = document.getElementById('hr');
+    hr.setAttribute('hidden', 'true');
+}
+
+
+/* Function to open the modal and apply styles */ 
+function openModal() {
+    const modal = document.getElementById('modal1');
+    modal.showModal();
+    document.body.classList.add('modal-open');
+}
+
+/* Function to close the modal and revert styles */ 
+function modalClose() {
+    const modal = document.getElementById('modal1');
+    modal.close();
+
+    // Reset the data
+    resetData();
+
+    // Revert page styles
+    document.body.classList.remove('modal-open');
 }

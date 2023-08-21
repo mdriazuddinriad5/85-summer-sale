@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="./style.css/modal.css">
+
     <style>
         .font-sans {
             font-family: 'Work Sans', sans-serif;
@@ -307,12 +309,7 @@
 
                     <div class="w-full bg-base-100 px-6 pt-6">
                         <div id="itemList" class="text-text-color-1 font-sans font-medium text-lg md:text-2xl mb-4">
-                            <!-- <ol type="1">
-                                <li>Home Cooker</li>
-                                <li>Sports cates</li>
-                                <li>Home Cooker</li>
-                            </ol> -->
-
+                        
                         </div>
                         <div>
                             <hr id="hr" class="my-3" hidden>
@@ -331,7 +328,7 @@
                         <div class="relative">
                             <button id="purchaseBtn"
                                 class="btn py-4 md:px-24 bg-btn-bg text-white rounded-lg transform translate-y-1/2"
-                                onclick="modal1.showModal()" disabled>Make Purchase</button>
+                                onclick="openModal()" disabled>Make Purchase</button>
 
                             <dialog id="modal1" class="modal ">
                                 <div class="card md:w-96 h-1/2 bg-white border-[1px] rounded-lg text-center py-4 px-4">
@@ -381,9 +378,9 @@
                                     </div>
 
                                     <h3 class="text-2xl font-bold lg:mt-4 lg:mb-1">Congratulations</h3>
-                                    <p class="font-light text-base my-2 lg:my-1">Your Purchase the product</p>
+                                    <p class="font-light text-base my-2 lg:my-1">You Purchased the product</p>
                                     <div class=" modal-action mt-10 lg:mb-6 mx-auto">
-                                        <button class="btn px-11 py-4 bg-btn-bg" onclick="modal1.close()">Go
+                                        <button class="btn px-11 py-4 bg-btn-bg" onclick="modalClose()">Go
                                             Home</button>
                                     </div>
                                 </div>
