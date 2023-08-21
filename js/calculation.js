@@ -7,7 +7,6 @@ document.getElementById('prod1').addEventListener('click', function () {
     addPriceToEntry(priceDecimal);
     addDiscountToEntry(priceDecimal);
 
-
 })
 
 document.getElementById('prod2').addEventListener('click', function () {
@@ -61,6 +60,7 @@ document.getElementById('prod7').addEventListener('click', function () {
 
 })
 
+
 document.getElementById('prod8').addEventListener('click', function () {
     const priceDecimal = getItemPriceById('price8');
     addToEntry('Children play');
@@ -77,7 +77,7 @@ document.getElementById('prod9').addEventListener('click', function () {
 })
 
 
-/* Apply button listener */
+/* Apply discount on button listener*/
 
 
 const applyBtn = document.getElementById('applyBtn');
@@ -86,11 +86,11 @@ applyBtn.addEventListener('click', function () {
     const couponField = document.getElementById('couponField');
     const couponText = couponField.value;
     if (couponText == 'SELL200') {
-        const totalField= document.getElementById('tp');
-        const totalText= totalField.innerText;
-        const total= parseFloat(totalText);
+        const totalField = document.getElementById('tp');
+        const totalText = totalField.innerText;
+        const total = parseFloat(totalText);
         const discount = total * .2;
-        const discountDec= discount.toFixed(2);
+        const discountDec = discount.toFixed(2);
 
 
         const discountPriceField = document.getElementById('dp');
@@ -98,17 +98,18 @@ applyBtn.addEventListener('click', function () {
 
 
         const discountedPrice = document.getElementById('tdp');
-        const updatedPrice= total-discount;
-        const updatedPriceDec= updatedPrice.toFixed(2);
+        const updatedPrice = total - discount;
+        const updatedPriceDec = updatedPrice.toFixed(2);
         discountedPrice.innerHTML = `${updatedPriceDec} Tk`;
-        couponField.value='';
+        couponField.value = '';
     } else {
         alert('Please Enter SELL200 coupon to get discount');
-        couponField.value='';
+        couponField.value = '';
         return
     }
 
 })
+
 
 
 /* Get the price of items */
@@ -164,8 +165,8 @@ function addDiscountToEntry(totalPrice) {
 
 function resetData() {
 
-    totalPrice=0;
- 
+    totalPrice = 0;
+
     const itemsEntry = document.getElementById('itemList');
     const totalPriceField = document.getElementById('tp');
     const discountPriceField = document.getElementById('dp');
@@ -184,21 +185,21 @@ function resetData() {
     purchaseBtn.disabled = true;
     applyBtn.disabled = true;
 
-    
+
 
     const hr = document.getElementById('hr');
     hr.setAttribute('hidden', 'true');
 }
 
 
-/* Function to open the modal and apply styles */ 
+/* Function to open the modal and apply styles */
 function openModal() {
     const modal = document.getElementById('modal1');
     modal.showModal();
     document.body.classList.add('modal-open');
 }
 
-/* Function to close the modal and revert styles */ 
+/* Function to close the modal and revert styles */
 function modalClose() {
     const modal = document.getElementById('modal1');
     modal.close();
